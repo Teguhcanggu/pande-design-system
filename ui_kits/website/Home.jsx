@@ -68,13 +68,23 @@ function Home({ go }) {
     hero && hero.addEventListener('pointermove', onMove);
     hero && hero.addEventListener('pointerleave', onLeave);
 
-    // scroll depth on the photo
+    // scroll depth on the photo — driven by a rAF loop that only runs while the
+    // hero is on screen (IntersectionObserver), never a window 'scroll' listener.
     const bg = scene && scene.querySelector('.hero__bg');
-    const onScroll = () => {
+    let scrollRaf = 0, lastY = -1;
+    const scrollTick = () => {
       const y = window.scrollY;
-      if (bg && y < window.innerHeight) bg.style.setProperty('--sy', `${(y * 0.18).toFixed(1)}px`);
+      if (bg && y !== lastY && y < window.innerHeight) {
+        bg.style.setProperty('--sy', `${(y * 0.18).toFixed(1)}px`);
+        lastY = y;
+      }
+      scrollRaf = requestAnimationFrame(scrollTick);
     };
-    window.addEventListener('scroll', onScroll, { passive: true });
+    const heroIO = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) { if (!scrollRaf) scrollRaf = requestAnimationFrame(scrollTick); }
+      else if (scrollRaf) { cancelAnimationFrame(scrollRaf); scrollRaf = 0; }
+    }, { threshold: 0 });
+    hero && heroIO.observe(hero);
 
     // 3D tilt on room cards
     const cards = [...document.querySelectorAll('.rooms .pande-room')];
@@ -97,7 +107,8 @@ function Home({ go }) {
     return () => {
       hero && hero.removeEventListener('pointermove', onMove);
       hero && hero.removeEventListener('pointerleave', onLeave);
-      window.removeEventListener('scroll', onScroll);
+      heroIO.disconnect();
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
       tiltHandlers.forEach(({ card, move, leave }) => { card.removeEventListener('pointermove', move); card.removeEventListener('pointerleave', leave); });
     };
   }, []);
@@ -202,7 +213,7 @@ function Home({ go }) {
         <div className="wrap">
           <div className="section-head"><Eyebrow>Loved by guests</Eyebrow><h2 style={{ fontSize: 'var(--fs-h2-sm)' }}>Why travelers come back</h2></div>
           <div className="reviews__grid">
-            <Review rating={5} author="— Guest review, illustrative" quote="Felt like staying with friends — the shared kitchen made the whole trip social and easy." />
+            <Review rating={5} author="— Guest review, illustrative" quote="Felt like staying with friends — the shared kitchen made the whole trip social and easy." style={{ padding: '2.4rem 2.2rem' }} />
             <Review rating={5} author="— Guest review, illustrative" quote="Minutes from Batu Bolong. We rolled out of bed and straight onto the waves." />
             <Review rating={4} author="— Guest review, illustrative" quote="Warm hosts who sorted our scooter and airport pickup without any fuss." />
           </div>

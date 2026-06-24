@@ -25,7 +25,7 @@
   /* ---- Shadow ---- */
   --shadow:    0 18px 50px -22px rgba(46,33,23,.55);
   --shadow-sm: 0 8px 24px -16px rgba(46,33,23,.5);
-  --shadow-coral: 0 10px 24px -10px rgba(242,112,78,.8);
+  --shadow-coral: 0 8px 20px -12px rgba(242,112,78,.5);  /* soft tinted lift, not a neon glow */
 
   /* ---- Motion ---- */
   --ease: cubic-bezier(.22,.61,.36,1); /* @kind other */
