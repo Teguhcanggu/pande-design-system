@@ -1,0 +1,24 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Base & Accent" subtitle="Warm Chalk base, Wet Earth text, Sunset Coral accent" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body{padding:20px;background:var(--chalk)}
+  .row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .sw{border-radius:var(--r-md);overflow:hidden;border:1px solid var(--line-soft)}
+  .chip{height:78px}
+  .meta{padding:.5rem .65rem;background:#fff}
+  .meta b{font-family:var(--font-body);font-weight:600;font-size:.8rem;display:block;color:var(--earth)}
+  .meta span{font-family:var(--font-body);font-size:.72rem;color:var(--earth-soft);letter-spacing:.04em}
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="sw"><div class="chip" style="background:var(--chalk)"></div><div class="meta"><b>Warm Chalk</b><span>#F3EBDD · base</span></div></div>
+    <div class="sw"><div class="chip" style="background:var(--earth)"></div><div class="meta"><b>Wet Earth Brown</b><span>#2E2117 · text</span></div></div>
+    <div class="sw"><div class="chip" style="background:var(--coral)"></div><div class="meta"><b>Sunset Coral</b><span>#F2704E · accent</span></div></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,283 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/booking/**",
+              "components/cards/**",
+              "components/core/**",
+              "ui_kits/website/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Cormorant Garamond|Work Sans))/i]",
+        "message": "Font not provided by the design system. Available: Cormorant Garamond, Work Sans."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Amenity'] > JSXAttribute > JSXIdentifier[name!=/^(?:icon|label|note|style|key|ref|className|style|children)$/]",
+        "message": "<Amenity> doesn't accept that prop. Declared props: icon, label, note, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='BookingBar'] > JSXAttribute > JSXIdentifier[name!=/^(?:onSubmit|defaultGuests|style|key|ref|className|style|children)$/]",
+        "message": "<BookingBar> doesn't accept that prop. Declared props: onSubmit, defaultGuests, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|variant|href|type|disabled|onDark|style|onClick|key|ref|className|style|children)$/]",
+        "message": "<Button> doesn't accept that prop. Declared props: children, variant, href, type, disabled, onDark, style, onClick."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:coral|ghost)$/]",
+        "message": "<Button> variant must be one of 'coral' | 'ghost'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='type'] > Literal[value!=/^(?:button|submit|reset)$/]",
+        "message": "<Button> type must be one of 'button' | 'submit' | 'reset'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Eyebrow'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|onDark|style|key|ref|className|style|children)$/]",
+        "message": "<Eyebrow> doesn't accept that prop. Declared props: children, onDark, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Perk'] > JSXAttribute > JSXIdentifier[name!=/^(?:icon|title|children|style|key|ref|className|style|children)$/]",
+        "message": "<Perk> doesn't accept that prop. Declared props: icon, title, children, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Review'] > JSXAttribute > JSXIdentifier[name!=/^(?:quote|author|rating|style|key|ref|className|style|children)$/]",
+        "message": "<Review> doesn't accept that prop. Declared props: quote, author, rating, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='RoomCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:image|alt|name|blurb|href|tag|span|style|key|ref|className|style|children)$/]",
+        "message": "<RoomCard> doesn't accept that prop. Declared props: image, alt, name, blurb, href, tag, span, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='RoomCard'] > JSXAttribute[name.name='span'] > Literal[value!=/^(?:std|tall|wide)$/]",
+        "message": "<RoomCard> span must be one of 'std' | 'tall' | 'wide'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Tag'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|style|key|ref|className|style|children)$/]",
+        "message": "<Tag> doesn't accept that prop. Declared props: children, style."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "Amenity": {
+        "replaces": []
+      },
+      "BookingBar": {
+        "replaces": []
+      },
+      "Button": {
+        "replaces": []
+      },
+      "Eyebrow": {
+        "replaces": []
+      },
+      "Perk": {
+        "replaces": []
+      },
+      "Review": {
+        "replaces": []
+      },
+      "RoomCard": {
+        "replaces": []
+      },
+      "Tag": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--accent",
+      "--accent-hover",
+      "--bg-elevated",
+      "--bg-page",
+      "--brick",
+      "--chalk",
+      "--chalk-deep",
+      "--coral",
+      "--coral-deep",
+      "--dur-fast",
+      "--dur-mid",
+      "--dur-slow",
+      "--earth",
+      "--earth-soft",
+      "--ease",
+      "--eyebrow",
+      "--font-body",
+      "--font-display",
+      "--frond",
+      "--fs-base",
+      "--fs-eyebrow",
+      "--fs-h2",
+      "--fs-h2-sm",
+      "--fs-h3",
+      "--fs-hero",
+      "--fs-label",
+      "--fs-lead",
+      "--fs-page",
+      "--fs-quote",
+      "--fs-sm",
+      "--fs-xs",
+      "--fw-light",
+      "--fw-medium",
+      "--fw-regular",
+      "--fw-semibold",
+      "--lh-body",
+      "--lh-display",
+      "--lh-tight",
+      "--line",
+      "--line-on-dark",
+      "--line-soft",
+      "--ls-btn",
+      "--ls-display",
+      "--ls-eyebrow",
+      "--ls-label",
+      "--ls-nav",
+      "--maxw",
+      "--night",
+      "--r-lg",
+      "--r-md",
+      "--r-pill",
+      "--r-sm",
+      "--r-xl",
+      "--section-y",
+      "--shadow",
+      "--shadow-coral",
+      "--shadow-sm",
+      "--sienna",
+      "--sp-1",
+      "--sp-2",
+      "--sp-3",
+      "--sp-4",
+      "--sp-5",
+      "--sp-6",
+      "--surface-card",
+      "--surface-dark",
+      "--surface-footer",
+      "--text-body",
+      "--text-muted",
+      "--text-on-dark",
+      "--text-on-dark-muted",
+      "--veil",
+      "--white",
+      "--wrap"
+    ],
+    "tokenKinds": {
+      "--chalk": "color",
+      "--chalk-deep": "color",
+      "--brick": "color",
+      "--sienna": "color",
+      "--earth": "color",
+      "--earth-soft": "color",
+      "--coral": "color",
+      "--coral-deep": "color",
+      "--frond": "color",
+      "--night": "color",
+      "--white": "color",
+      "--bg-page": "color",
+      "--bg-elevated": "color",
+      "--surface-card": "color",
+      "--surface-dark": "color",
+      "--surface-footer": "color",
+      "--text-body": "font",
+      "--text-muted": "font",
+      "--text-on-dark": "font",
+      "--text-on-dark-muted": "font",
+      "--accent": "color",
+      "--accent-hover": "color",
+      "--eyebrow": "color",
+      "--line": "color",
+      "--line-soft": "color",
+      "--line-on-dark": "color",
+      "--veil": "color",
+      "--font-display": "font",
+      "--font-body": "font",
+      "--fw-light": "other",
+      "--fw-regular": "other",
+      "--fw-medium": "other",
+      "--fw-semibold": "other",
+      "--fs-hero": "other",
+      "--fs-page": "other",
+      "--fs-h2": "other",
+      "--fs-h2-sm": "other",
+      "--fs-h3": "other",
+      "--fs-quote": "other",
+      "--fs-lead": "other",
+      "--fs-base": "other",
+      "--fs-sm": "other",
+      "--fs-xs": "other",
+      "--fs-label": "other",
+      "--fs-eyebrow": "other",
+      "--lh-display": "other",
+      "--lh-body": "other",
+      "--lh-tight": "other",
+      "--ls-display": "other",
+      "--ls-eyebrow": "other",
+      "--ls-label": "other",
+      "--ls-nav": "other",
+      "--ls-btn": "other",
+      "--maxw": "spacing",
+      "--wrap": "spacing",
+      "--sp-1": "spacing",
+      "--sp-2": "spacing",
+      "--sp-3": "spacing",
+      "--sp-4": "spacing",
+      "--sp-5": "spacing",
+      "--sp-6": "spacing",
+      "--section-y": "spacing",
+      "--r-sm": "spacing",
+      "--r-md": "spacing",
+      "--r-lg": "spacing",
+      "--r-xl": "spacing",
+      "--r-pill": "spacing",
+      "--shadow": "shadow",
+      "--shadow-sm": "shadow",
+      "--shadow-coral": "shadow",
+      "--ease": "other",
+      "--dur-fast": "other",
+      "--dur-mid": "other",
+      "--dur-slow": "other"
+    },
+    "fontFamilies": [
+      "Cormorant Garamond",
+      "Work Sans"
+    ]
+  }
+}

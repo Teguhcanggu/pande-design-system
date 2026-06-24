@@ -1,0 +1,8 @@
+/* ============================================================
+   Pande Homestay — Webfonts
+   Display: Cormorant Garamond · Body/UI: Work Sans
+   Loaded from Google Fonts with font-display: swap (CLS-safe).
+   If you self-host, replace this @import with @font-face rules
+   pointing at the local .woff2 binaries.
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Work+Sans:wght@300;400;500;600&display=swap');

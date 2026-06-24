@@ -1,0 +1,49 @@
+<!-- @dsCard group="Components" viewport="700x460" name="Cards — Room, Review, Perk" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  body{padding:24px;background:var(--chalk)}
+  .rooms{display:grid;grid-template-columns:repeat(6,1fr);gap:1rem;margin-bottom:1.4rem}
+  .reviews{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.4rem}
+  .perks{display:grid;grid-template-columns:1fr 1fr;gap:1rem;background:var(--earth);padding:1.4rem;border-radius:var(--r-lg)}
+</style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const { RoomCard, Review, Perk } = window.DesignSystem_3691ef;
+    function Demo() {
+      return (
+        <div>
+          <div className="rooms">
+            <RoomCard span="wide" tag="Signature" image="../../assets/img/room-java-wooden-house.webp"
+              alt="Java wooden house with warm timber interior" name="Java Wooden House"
+              blurb="A comfy wooden house — feel the natural harmony inside." />
+            <RoomCard span="tall" image="../../assets/img/room-deluxe-double-balcony.webp"
+              alt="Deluxe double with private balcony" name="Deluxe Double · Balcony"
+              blurb="Upper-floor comfort with a balcony to chill." />
+          </div>
+          <div className="reviews">
+            <Review rating={5} author="— Guest review, illustrative"
+              quote="Felt like staying with friends — the shared kitchen made the whole trip social." />
+            <Review rating={4} author="— Guest review, illustrative"
+              quote="Warm hosts who sorted our scooter and airport pickup without any fuss." />
+          </div>
+          <div className="perks">
+            <Perk icon="◎" title="Best price, direct">Our lowest available rate, straight from us.</Perk>
+            <Perk icon="✆" title="Local host on WhatsApp">Real people, real replies — before & during.</Perk>
+          </div>
+        </div>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+  </script>
+</body>
+</html>

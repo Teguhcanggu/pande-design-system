@@ -1,0 +1,18 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pande Homestay">
+  
+  <g stroke="#2E2117" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    
+    <path d="M12 31 L32 13 L52 31"></path>
+    
+    <path d="M19 29 V50 H45 V29"></path>
+    
+    <path d="M11 50 H53"></path>
+  </g>
+
+  
+  <path d="M28 50 V44.5 a4 4 0 0 1 8 0 V50 Z" fill="#F2704E"></path>
+
+  
+  <path d="M47.5 19.5 C 53 17.5, 57 13, 58 7.5 C 52.5 9, 48.5 13.5, 47.5 19.5 Z" fill="#4F6346"></path>
+  <path d="M49 17 C 51.5 14.5, 54.5 12.5, 57 11" stroke="#F3EBDD" stroke-width="0.9" stroke-linecap="round" fill="none" opacity="0.7"></path>
+</svg>

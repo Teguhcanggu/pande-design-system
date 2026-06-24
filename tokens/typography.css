@@ -1,0 +1,45 @@
+/* ============================================================
+   Pande Homestay — Typography tokens
+   One display family (Cormorant Garamond) + one body (Work Sans).
+   Display = oversized serif headlines in deep earth.
+   Body = all UI, labels, prices, booking.
+   ============================================================ */
+:root{
+  /* ---- Families ---- */
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; /* @kind font */
+  --font-body:    'Work Sans', system-ui, -apple-system, sans-serif; /* @kind font */
+
+  /* ---- Weights ---- */
+  --fw-light:   300; /* @kind other */
+  --fw-regular: 400; /* @kind other */
+  --fw-medium:  500; /* @kind other */
+  --fw-semibold:600; /* @kind other */
+
+  /* ---- Display scale (clamped, fluid) ---- */
+  --fs-hero:     clamp(3rem, 9vw, 8rem);     /* @kind other */
+  --fs-page:     clamp(2.6rem, 6.5vw, 5.2rem); /* @kind other */
+  --fs-h2:       clamp(2.4rem, 5.2vw, 4.4rem); /* @kind other */
+  --fs-h2-sm:    clamp(2rem, 4.4vw, 3.4rem); /* @kind other */
+  --fs-h3:       clamp(1.7rem, 3.4vw, 2.6rem); /* @kind other */
+  --fs-quote:    clamp(1.8rem, 3.4vw, 2.8rem); /* @kind other */
+
+  /* ---- Body scale ---- */
+  --fs-lead:     1.06rem;   /* @kind other */
+  --fs-base:     1rem;      /* @kind other */
+  --fs-sm:       .88rem;    /* @kind other */
+  --fs-xs:       .78rem;    /* @kind other */
+  --fs-label:    .66rem;    /* @kind other */
+  --fs-eyebrow:  .72rem;    /* @kind other */
+
+  /* ---- Line-height ---- */
+  --lh-display:  1.04; /* @kind other */
+  --lh-body:     1.6;  /* @kind other */
+  --lh-tight:    1.18; /* @kind other */
+
+  /* ---- Letter-spacing ---- */
+  --ls-display:  -.01em; /* @kind other */
+  --ls-eyebrow:  .32em;  /* @kind other */
+  --ls-label:    .18em;  /* @kind other */
+  --ls-nav:      .06em;  /* @kind other */
+  --ls-btn:      .04em;  /* @kind other */
+}

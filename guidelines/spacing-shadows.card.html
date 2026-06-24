@@ -1,0 +1,20 @@
+<!-- @dsCard group="Spacing" viewport="700x180" name="Shadows" subtitle="Soft warm-brown elevation — sm cards, lg features, coral CTA glow" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body{padding:30px 22px;background:var(--chalk);display:flex;gap:30px;align-items:center}
+  .card{background:#fff;width:150px;height:90px;border-radius:var(--r-lg);display:flex;align-items:flex-end;padding:.6rem .7rem}
+  .card span{font-family:var(--font-body);font-size:.68rem;color:var(--earth-soft)}
+  .coral{background:var(--coral)}
+  .coral span{color:#fff}
+</style>
+</head>
+<body>
+  <div class="card" style="box-shadow:var(--shadow-sm)"><span>shadow-sm</span></div>
+  <div class="card" style="box-shadow:var(--shadow)"><span>shadow</span></div>
+  <div class="card coral" style="box-shadow:var(--shadow-coral)"><span>coral CTA glow</span></div>
+</body>
+</html>

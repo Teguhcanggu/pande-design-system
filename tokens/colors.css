@@ -1,0 +1,43 @@
+/* ============================================================
+   Pande Homestay — Color tokens
+   Palette: "Old Wood & Brick"
+   Coral is an ACCENT only (CTAs, links, eyebrows, small rules).
+   Keep display headings in deep earth so coral stays a signature.
+   Never use coral for body text (contrast).
+   ============================================================ */
+:root{
+  /* ---- Base palette ---- */
+  --chalk:        #F3EBDD;   /* Warm Chalk — base background */
+  --chalk-deep:   #EAD9C0;   /* Coconut Husk — elevated surface */
+  --brick:        #C98A6A;   /* Aged Brick — warm neutral */
+  --sienna:       #9E4A2C;   /* Burnt Sienna — terracotta emphasis */
+  --earth:        #2E2117;   /* Wet Earth Brown — primary text */
+  --earth-soft:   #5A4A3A;   /* muted body text */
+  --coral:        #F2704E;   /* Sunset Coral — signature accent */
+  --coral-deep:   #D8542F;   /* coral hover/active */
+  --frond:        #4F6346;   /* Banana Frond — support green */
+  --night:        #1C1510;   /* Night Earth — footer */
+  --white:        #FFFFFF;
+
+  /* ---- Semantic aliases ---- */
+  --bg-page:        var(--chalk);
+  --bg-elevated:    var(--chalk-deep);
+  --surface-card:   var(--white);
+  --surface-dark:   var(--earth);
+  --surface-footer: var(--night);
+
+  --text-body:      var(--earth);
+  --text-muted:     var(--earth-soft);
+  --text-on-dark:   var(--chalk);
+  --text-on-dark-muted: var(--chalk-deep);
+
+  --accent:         var(--coral);
+  --accent-hover:   var(--coral-deep);
+  --eyebrow:        var(--sienna);
+
+  /* hairlines & overlays */
+  --line:           rgba(46,33,23,.12);
+  --line-soft:      rgba(46,33,23,.08);
+  --line-on-dark:   rgba(243,235,221,.15);
+  --veil:           rgba(28,21,16,.55);   /* image-over text protection */
+}
